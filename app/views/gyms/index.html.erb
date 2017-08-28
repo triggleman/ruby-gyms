@@ -1,0 +1,23 @@
+<h1>All the gyms new GA</h1>
+
+<div>
+	<%= form_for(:gym, url: search_gyms_path, :html => {:class => "form"}) do |f|%>
+	  <%= f.text_field :formatted_address, class: "formInput", placeholder: "Location" %>
+	  <%= f.submit "Search", class: "button" %>
+	<% end %>
+</div>
+
+
+
+<div id="rest-wrapper">
+	<% if @gyms %>
+		<% @gyms.each do |gym| %>
+			<div class="rest-cont">
+				<p>Name: <%= gym["name"]%></p>
+				<p>Rating: <%= gym["rating"]%></p>
+				<%= button_to("View", new_gym_path, method: 'get') %>
+				<%= button_to("Save", save_gym_path, method: 'post') %>
+			</div>
+		<% end %>
+	<% end %>
+</div>

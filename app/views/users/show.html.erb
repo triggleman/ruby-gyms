@@ -1,0 +1,10 @@
+<h1>Let's Get Juiced Up <%= @user.name %> </h1>
+
+<%= link_to("Search Up Local Gym's", search_gyms_path) %>
+
+<% if @fav %>
+  <% @fav.each do |f| %>
+    <%= f.name %>
+    <%= f.display_address %>
+  <% end %>
+<% end %>
