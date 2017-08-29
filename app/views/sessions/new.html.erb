@@ -1,5 +1,16 @@
-<div class= "formWrapper">
-  <h1 class = "robotoCondensedBold">Log In</h1>
-  <%= render "shared/login_form", {user: @user} %></br>
-  <p><%= link_to "Don't have an account? Create one!", signup_path, class: "link robotoMono"%></p>
-</div>
+<!DOCTYPE html>
+<html>
+  <body class="loginpage">
+    <div class= "loginWrapper">
+      <h1 class = "login_text">Please Login In</h1>
+      <div class="login_form">
+        <%= form_for(:session, url: login_path, :html=> {:class => "form"}) do |f| %>
+          <%= f.email_field :email, placeholder:"email", class: "formInput" %>
+          <%= f.password_field :password, placeholder: "password", class: "formInput"%>
+          <%= f.submit "Log In", class: "button" %>
+        <% end %>
+      </div>
+      <%= link_to "Don't have an account? Create one!", signup_path, class: "link"%>
+    </div>
+  </body>
+</html>

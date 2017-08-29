@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get "/users/:id/gyms/search", to: "gyms#search", as: :search_gyms
   post "/users/:id/gyms/search", to: "gyms#google", as: :gyms
-  get "/users/:id/gyms/gym", to: "gyms#new", as: :new_gym
+  get "/users/:id/gyms/new", to: "gyms#new", as: :new_gym
   post "/users/:id", to: "gyms#create", as: :save_gym
   delete "/users/:id/:gym_id", to: "gyms#destroy", as: :delete_gym
 

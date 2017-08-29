@@ -13,16 +13,191 @@
  *= require_tree .
  *= require_self
  */
+
+ /*------------ welcome ---------------*/
+ .welcomepage{
+   background-image: url('http://corpolouco.pt/wp-content/uploads/2015/10/ginasio-corpo-louco-5.jpg');
+   background-size: cover;
+	background-repeat: no-repeat;
+ }
+ .welcome {
+   width: 50vw;
+   margin: 0 auto;
+   text-align: center;
+   position: relative;
+   top: 100px;
+ }
+ button{
+   width: 160px;
+   height: 60px;
+   background-color: #000000;
+   border: 1px solid white;
+   border-radius: 5px;
+ }
  .welcomeLink{
    text-decoration: none;
    color: white;
+   font-size: 20px;
+ }
+ .welcomeText {
+   font-size: 4em;
+   color: white;
+   font-family: 'Poppins', sans-serif;
  }
 
- .form {
-   width: 25vw;
-   margin: 0 auto;
-   text-align:center;
+/*---------------- login -------------------*/
+
+.loginpage {
+  background-image: url('https://rebel-performance.com/wp-content/uploads/2014/12/photodune-4175893-dumbbell-background-s.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+  height: 100vh;
 }
+
+.loginWrapper {
+  position: relative;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  margin: auto;
+  font-family: 'Poppins', sans-serif;
+}
+.login_text {
+  text-align: center;
+  font-size: 4em;
+  font-family: 'Poppins', sans-serif;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+input {
+  margin: 10px;
+}
+
+input, select, textarea{
+    color: #ffffff;
+}
+
+::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+input.button {
+  width: 160px;
+  height: 60px;
+  background-color: #000000;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.5em;
+}
+
+.formInput {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 40vw;
+  text-align: center;
+  padding: 5px;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: inherit;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: black;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 25px;
+}
+
+/*------------------------- signup ------------------------*/
+
+.signuppage {
+    background-image: url('https://wallpaperscraft.com/image/dumbbells_fitness_gym_113149_1920x1080.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.signUpFormWrapper {
+  position: relative;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  margin: auto;
+  background-color: rgba(159, 159, 159, 0.30);
+  border-radius: 10px;
+}
+
+.signupText {
+  margin-top: 25px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 4em;
+  color: white;
+}
+
+.new_user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.signUpForm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/*----------------------- Profile -------------------------*/
+
+.userText {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5em;
+}
+
+
+/*---------------------- search ----------------------*/
+
+.searchpage {
+  background-color: black;
+}
+
+.searchText {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5em;
+  color: white;
+  text-align: center;
+}
+
+.formSearch {
+  border: none;
+  border-bottom: 1px solid white;
+  width: 40vw;
+  text-align: center;
+  padding: 5px;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: inherit;
+}
+
 
 #rest-wrapper {
 	background-color: #212121;

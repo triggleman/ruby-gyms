@@ -14,7 +14,7 @@ class GymsController < ApplicationController
   end
 
   def new
-    @fav = Gym.new
+  
   end
 
   def create
@@ -38,7 +38,7 @@ class GymsController < ApplicationController
   private
 
   def gym_params
-    params.require(:gym).permit(:formatted_address, :name, :geometry, :rating, :user_id)
+    params.require(:gym).permit(:formatted_address, :name, :geometry, :rating, :user)
   end
 
 end

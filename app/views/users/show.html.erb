@@ -1,10 +1,17 @@
-<h1>Let's Get Juiced Up <%= @user.name %> </h1>
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1 class="userText">Let's Get You Swolled <%= @user.name %> </h1>
 
-<%= link_to("Search Up Local Gym's", search_gyms_path) %>
+    <%= link_to "Search Up Local Gym's", search_gyms_path, class: "link" %>
 
-<% if @fav %>
-  <% @fav.each do |f| %>
-    <%= f.name %>
-    <%= f.display_address %>
-  <% end %>
-<% end %>
+    <div class="favorites">
+      <% if @fav %>
+        <% @fav.each do |f| %>
+          <%= f.name %>
+          <%= f.display_address %>
+        <% end %>
+      <% end %>
+    </div>
+  </body>
+</html>
