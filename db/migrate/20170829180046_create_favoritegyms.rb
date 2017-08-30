@@ -1,6 +1,6 @@
-class CreateGyms < ActiveRecord::Migration[5.1]
+class CreateFavoritegyms < ActiveRecord::Migration[5.1]
   def change
-    create_table :gyms do |t|
+    create_table :favoritegyms do |t|
       t.string :formatted_address
       t.string :geometry
       t.string :name

@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1 class="userText">Let's Get You Swolled <%= @user.name %> </h1>
+    <div class="banner">
+      <%= render './shared/banner' %>
+    </div>
+    <div class="maincontainer">
+      <div class="infocontainer">
+        <h1 class="userText">Let's Get You Swolled <%= @user.name %> </h1>
+        <%= link_to "Search Up Local Gym's", search_gyms_path, class: "link" %>
+      </div>
 
-    <%= link_to "Search Up Local Gym's", search_gyms_path, class: "link" %>
-
-    <div class="favorites">
-      <% if @fav %>
-        <% @fav.each do |f| %>
-          <%= f.name %>
-          <%= f.display_address %>
-        <% end %>
-      <% end %>
+      <div class="favoritescontainer">
+        <h1 class="FavoriteText">Your Favorites</h1>
+        <div class="favorites">
+          <% if @gyms %>
+          <% @gyms.each do |gym| %>
+          <div class="favoritesresults">
+            <%= button_to("x", delete_gym_path(:gym_id => gym.id), method: "delete", class: "deleteButton") %>
+            <p>Name: <%= gym.name %></p>
+            <p>Location: <%= gym.formatted_address %></p>
+            <%= form_for(:gym, url: new_gym_path, :method => "get") do |f| %>
+            <%= f.hidden_field(:formatted_address, :value => gym['formatted_address']) %>
+            <%= f.hidden_field(:geometry, :value => gym['geometry']['location']) %>
+            <%= f.hidden_field(:name, :value => gym['name']) %>
+            <%= f.hidden_field(:rating, :value => gym['rating']) %>
+            <%= f.hidden_field(:user, :value => session[:user_id])%>
+            <%= f.submit "View", :class => "profileview" %>
+            <% end %>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+      </div>  
     </div>
   </body>
 </html>

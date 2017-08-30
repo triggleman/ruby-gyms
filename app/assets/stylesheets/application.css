@@ -14,11 +14,33 @@
  *= require_self
  */
 
+/*----------------------- banner  -----------------------*/
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e0e0e0;
+}
+
+.bannerText {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3em;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
  /*------------ welcome ---------------*/
  .welcomepage{
    background-image: url('http://corpolouco.pt/wp-content/uploads/2015/10/ginasio-corpo-louco-5.jpg');
    background-size: cover;
-	background-repeat: no-repeat;
+	 background-repeat: no-repeat;
+   height: 100vh;
  }
  .welcome {
    width: 50vw;
@@ -91,10 +113,10 @@ input, select, textarea{
 
 input.button {
   width: 160px;
-  height: 60px;
+  height: 50px;
   background-color: #000000;
   border: 1px solid white;
-  border-radius: 5px;
+  border-radius: 10px;
   color: white;
   font-size: 1.5em;
 }
@@ -113,13 +135,13 @@ input.button {
 .link {
   color: white;
   text-decoration: none;
-  border: 1px solid black;
   padding: 10px;
   margin-top: 10px;
   background-color: black;
   border-radius: 5px;
   font-family: 'Poppins', sans-serif;
-  margin-bottom: 25px;
+  align-items: center;
+  display: flex;
 }
 
 /*------------------------- signup ------------------------*/
@@ -173,18 +195,70 @@ input.button {
   font-size: 2.5em;
 }
 
+.FavoriteText {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.favoritescontainer {
+  width: 50vw;
+  margin: auto;
+}
+
+.deleteButton {
+  border-radius: 50%;
+  color: black;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border: 1px solid black;
+  background-color: inherit;
+  font-size: 1em;
+  float: right;
+}
+
+.favorites {
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  border: 2px solid black;
+  display: flex;
+  justify-content: flex-start;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  border-radius: 10px;
+}
+
+.favoritesresults {
+  background-color: #e4e4e4;
+  margin: 10px;
+  height: 150px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.profileview {
+  background-color: inherit;
+  border: 1px solid black;
+  width: 80px;
+  height: 44px;
+  font-size: 1em;
+  color: black;
+}
+
+.maincontainer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
 
 /*---------------------- search ----------------------*/
 
 .searchpage {
   background-color: black;
-}
-
-.searchText {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.5em;
-  color: white;
-  text-align: center;
 }
 
 .formSearch {
@@ -220,4 +294,57 @@ input.button {
   padding: 10px;
   margin: 15px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+
+
+/*------------------------- view gym -------------------------------------*/
+
+.viewWrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+
+.viewInfo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2em;
+  text-align: center;
+}
+
+.map {
+  width: 40vw;
+  height: 50vh;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.viewbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  background-color: inherit;
+  border: 1px solid white;
+  width: 80px;
+  height: 44px;
+  font-size: 1em;
+}
+
+.btns {
+  flex-direction: row;
+  display: flex;
+}
+
+.viewbutton {
+  width: 200px;
+  height: 60px;
+  background-color: #000000;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 1.2em;
 }

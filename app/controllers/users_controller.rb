@@ -1,12 +1,10 @@
 class UsersController < ApplicationController
-  #
-  # before_action :require_user, only: [:show]
-	# before_action :require_current_user, only: [:show]
-
+    before_action :require_user, only: [:show]
+  	before_action :require_current_user, only: [:show]
 
   def new
-		@user = User.new
-	end
+    @user = User.new
+  end
 
   def create
 		@user = User.new(user_params)
@@ -21,6 +19,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @userInfo = User.where(:id => @user)
+    @gyms = Favoritegym.where(:user_id => @user)
+    @gymsid = Favoritegym.where(:user_id => @user).ids
   end
 
 

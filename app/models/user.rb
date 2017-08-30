@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :gyms, :dependent => :destroy
 
   has_one :user_detail
-  
+
   validates :email, confirmation: true,
     presence: true,
     uniqueness: true,

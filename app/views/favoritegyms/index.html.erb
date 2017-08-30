@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<body class="searchpage">
+		<div class="banner">
+      <%= render './shared/banner' %>
+    </div>
+		<div>
+			<%= form_for(:gym, url: search_gyms_path, :html => {:class => "form"}) do |f|%>
+			  <%= f.text_field :formatted_address, class: "formSearch", placeholder: "City, State or Zipcode" %>
+			  <%= f.submit "Search", class: "button" %>
+			<% end %>
+		</div>
+		<div id="rest-wrapper">
+			<% if @response %>
+				<% @response.each do |gym| %>
+					<div class="rest-cont">
+						<p>Name: <%= gym["name"]%></p>
+						<p>Rating: <%= gym["rating"]%></p>
+							<%= form_for(:gym, url: new_gym_path, :method => "get") do |f| %>
+							<%= f.hidden_field(:formatted_address, :value => gym['formatted_address']) %>
+							<%= f.hidden_field(:geometry, :value => gym['geometry']['location']) %>
+							<%= f.hidden_field(:name, :value => gym['name']) %>
+							<%= f.hidden_field(:rating, :value => gym['rating']) %>
+							<%= f.hidden_field(:user, :value => session[:user_id])%>
+							<%= f.submit "View", :class => "btn" %>
+						<% end %>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</body>
+</html>

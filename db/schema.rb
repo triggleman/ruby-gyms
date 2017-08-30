@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170822214045) do
+ActiveRecord::Schema.define(version: 20170829180046) do
 
-  create_table "gyms", force: :cascade do |t|
+  create_table "favoritegyms", force: :cascade do |t|
     t.string "formatted_address"
     t.string "geometry"
     t.string "name"
     t.integer "rating"
     t.integer "user_id"
-    t.index ["user_id"], name: "index_gyms_on_user_id"
+    t.index ["user_id"], name: "index_favoritegyms_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

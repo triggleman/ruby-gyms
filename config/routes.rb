@@ -9,10 +9,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create, :show]
 
-  get "/users/:id/gyms/search", to: "gyms#search", as: :search_gyms
-  post "/users/:id/gyms/search", to: "gyms#google", as: :gyms
-  get "/users/:id/gyms/new", to: "gyms#new", as: :new_gym
-  post "/users/:id", to: "gyms#create", as: :save_gym
-  delete "/users/:id/:gym_id", to: "gyms#destroy", as: :delete_gym
+  get "/users/:id/gyms/search", to: "favoritegyms#search", as: :search_gyms
+  post "/users/:id/gyms/search", to: "favoritegyms#google", as: :gyms
+  get "/users/:id/gyms/new", to: "favoritegyms#new", as: :new_gym
+  post "/users/:id", to: "favoritegyms#create", as: :save_gym
+  delete "/users/:id/:gym_id", to: "favoritegyms#destroy", as: :delete_gym
 
 end

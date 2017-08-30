@@ -1,0 +1,29 @@
+<div class="banner">
+  <%= render './shared/banner' %>
+</div>
+
+<div class="viewWrapper">
+    <div class="viewInfo">
+      <p>Name: <%= @name %></p>
+      <p>Rating: <%= @rating %>/5</p>
+      <p>Lacation:<br/> <%= @address %> </p>
+    </div>
+    <div class = "mapDiv">
+      <iframe class="map"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA6QiS1kwyDqVnvz78k691sJdDeXXe_V3k&q=<%= @address %>" allowfullscreen>
+      </iframe>
+  </div>
+</div>
+<div class="viewbtn">
+  <div class="btns">
+    <%= form_for(:gym, url: "/users/#{params[:id]}", :method => "post") do |f| %>
+    <%= f.hidden_field(:formatted_address, :value => @address) %>
+    <%= f.hidden_field(:geometry, :value => @location) %>
+    <%= f.hidden_field(:name, :value => @name) %>
+    <%= f.hidden_field(:rating, :value => @rating) %>
+    <%= f.submit "Save Gym", class: "viewbutton" %>
+    <% end %>
+    <%= button_to("Back to Search Page", search_gyms_path, method: "get", class: "viewbutton") %>
+  </div>
+</div>

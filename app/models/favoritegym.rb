@@ -1,4 +1,4 @@
-class Favorite < ApplicationRecord
+class Favoritegym < ApplicationRecord
   belongs_to :user
 
   validates :name, presence: true
