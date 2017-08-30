@@ -5,7 +5,7 @@
       <%= render './shared/banner' %>
     </div>
 		<div>
-			<%= form_for(:gym, url: search_gyms_path, :html => {:class => "form"}) do |f|%>
+			<%= form_for(:gym, url: gyms_path, :html => {:class => "form"}) do |f|%>
 			  <%= f.text_field :formatted_address, class: "formSearch", placeholder: "City, State or Zipcode" %>
 			  <%= f.submit "Search", class: "button" %>
 			<% end %>
