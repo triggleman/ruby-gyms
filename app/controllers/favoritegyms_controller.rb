@@ -12,9 +12,9 @@ class FavoritegymsController < ApplicationController
   end
 
   def google
-    formatted_address = params[:gym][:formatted_address]
-		google = ENV["GOOGLE"]
-    response = HTTParty.get('https://maps.googleapis.com/maps/api/place/textsearch/json?query=gyms+in+'+formatted_address+'&radius=2000&key='+google+'')
+    @formatted_address = params[:gym][:formatted_address]
+		@google = ENV["GOOGLE"]
+    response = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=gyms+in+#{@formatted_address}&radius=2000&key=#{@google}")
 		@response = response["results"]
 		render :index
   end
