@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 20170829180046) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "favoritegyms", force: :cascade do |t|
     t.string "formatted_address"
     t.string "geometry"
     t.string "name"
     t.integer "rating"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_favoritegyms_on_user_id"
   end
 
