@@ -17,7 +17,7 @@
           <% @gyms.each do |gym| %>
           <div class="favoritesresults">
             <%= button_to("x", delete_gym_path(:gym_id => gym.id), method: "delete", class: "deleteButton") %>
-            <p>Name: <%= gym.name %></p>
+            <p><%= gym.name %></p>
             <p>Location: <%= gym.formatted_address %></p>
             <%= form_for(:gym, url: new_gym_path, :method => "get") do |f| %>
             <%= f.hidden_field(:formatted_address, :value => gym['formatted_address']) %>
@@ -31,7 +31,7 @@
           <% end %>
           <% end %>
         </div>
-      </div>  
+      </div>
     </div>
   </body>
 </html>

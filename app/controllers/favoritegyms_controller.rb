@@ -29,7 +29,6 @@ class FavoritegymsController < ApplicationController
 
   def create
     @gym = Favoritegym.new(gym_params)
-    p @gym
     @gym.user_id = current_user.id
       if @gym.valid?
         @gym.save()
